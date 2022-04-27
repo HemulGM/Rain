@@ -1,0 +1,51 @@
+object FormMain: TFormMain
+  Left = 0
+  Top = 0
+  Caption = 'Form1'
+  ClientHeight = 480
+  ClientWidth = 640
+  FormStyle = StayOnTop
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnCreate = FormCreate
+  DesignerMasterStyle = 0
+  object Layout1: TLayout
+    Align = Client
+    Size.Width = 640.000000000000000000
+    Size.Height = 480.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    OnResize = Layout1Resize
+    object FloatAnimation1: TFloatAnimation
+      AnimationType = InOut
+      AutoReverse = True
+      Enabled = True
+      Duration = 10.000000000000000000
+      Inverse = True
+      Loop = True
+      PropertyName = 'TagFloat'
+      StartValue = -20.000000000000000000
+      StopValue = 20.000000000000000000
+    end
+  end
+  object PopupMenuTray: TPopupMenu
+    OnPopup = PopupMenuTrayPopup
+    Left = 304
+    Top = 184
+    object MenuItemOnTop: TMenuItem
+      Text = #1055#1086#1074#1077#1088#1093' '#1086#1082#1086#1085
+      OnClick = MenuItemOnTopClick
+    end
+    object MenuItemClose: TMenuItem
+      Text = #1047#1072#1082#1088#1099#1090#1100
+      OnClick = MenuItemCloseClick
+    end
+  end
+  object TrayIcon: TFMXTrayIcon
+    PopupMenu = PopupMenuTray
+    ID = 1
+    Left = 304
+    Top = 128
+  end
+end
